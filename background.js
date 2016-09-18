@@ -19,9 +19,7 @@ chrome.browserAction.onClicked.addListener(() => {
 	chrome.tabs.query({ url: fetcher.DESKTOP_URL + '*' }, tabs => {
 		if (tabs.length === 0) {
 			var urlToOpen = fetcher.DESKTOP_URL;
-			if (presenter.isRequestsIconShown()) {
-				urlToOpen = "https://www.facebook.com/friends/requests/";
-			} else if (presenter.isMessagesIconShown()) {
+			if (presenter.isMessagesIconShown()) {
 				urlToOpen = "https://www.facebook.com/messages/";
 			} else if (presenter.isNotificationsIconShown()) {
 				urlToOpen = "https://www.facebook.com/notifications/";

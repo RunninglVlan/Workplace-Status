@@ -12,11 +12,6 @@ function IconUpdater(p, s) {
 	this.updateIcons = () => {
 		updateIconArray = [];
 		presenter.resetTitle();
-		if (statuses.getRequestsCount()) {
-			updateIconArray.push(() => {
-				presenter.changeToRequestsIcon(statuses.getRequestsCount());
-			});
-		}
 		if (statuses.getMessagesCount()) {
 			updateIconArray.push(() => {
 				presenter.changeToMessagesIcon(statuses.getMessagesCount());

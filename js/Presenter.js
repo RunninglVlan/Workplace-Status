@@ -7,7 +7,6 @@
 	var Icons = {
 		DEFAULT: "default",
 		ERROR:   "error",
-		REQUESTS:      "requests",
 		MESSAGES:      "messages",
 		NOTIFICATIONS: "notifications"
 	};
@@ -31,12 +30,10 @@
 		browserAction.setTitle({ title: EXTENSION_NAME + (message ? ': ' + message : '') });
 	};
 
-	this.isRequestsIconShown       = () => currentIcon === Icons.REQUESTS;
 	this.isMessagesIconShown       = () => currentIcon === Icons.MESSAGES;
 	this.isNotificationsIconShown  = () => currentIcon === Icons.NOTIFICATIONS;
 
 	this.resetIcon = () => changeIcon(Icons.DEFAULT, '');
-	this.changeToRequestsIcon = count => changeIconWithCount(Icons.REQUESTS, count);
 	this.changeToMessagesIcon = count => changeIconWithCount(Icons.MESSAGES, count);
 	this.changeToNotificationsIcon = count => changeIconWithCount(Icons.NOTIFICATIONS, count);
 	var changeIconWithCount = (icon, count) => {
