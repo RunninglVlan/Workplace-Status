@@ -1,0 +1,61 @@
+body {
+	font-family:     "Trebuchet MS", Helvetica, sans-serif;
+	font-size:        100%;
+	background-color: gainsboro;
+}
+
+#container {
+	width:  480px;
+	margin: 20px auto;
+}
+header {
+	color:         #363d4c;
+	border-bottom: 2px solid white;
+	margin:        20px 0;
+}
+header img {
+	vertical-align: text-bottom;
+}
+
+h2, h3 {
+	margin: 10px 0;
+}
+
+section {
+	color:            white;
+	background-color: #363d4c;
+	padding:          30px;
+	border-radius:    6px;
+}
+form {
+	display: flex;
+}
+input {
+	font-family: inherit;
+	padding:     10px;
+	box-sizing:  border-box;
+}
+input[type=text] {
+	width:         79%;
+	margin-right:  2%;
+	border:        1px solid #ccc;
+	border-radius: 3px;
+}
+input[type=submit] {
+	width:  19%;
+	cursor: pointer;
+}
+a:link {    color: darkGray; }
+a:visited { color: gray; }
+a:hover {   color: white; }
+#accessibility {
+	transition: max-height 2s;
+	overflow:   hidden;
+}
+.hidden {  max-height: 0; }
+.visible { max-height: 500px; }
+
+footer {
+	border-top: 2px solid white;
+	margin:     20px 0;
+}

@@ -1,7 +1,7 @@
 ﻿function Presenter(bA) {
 	var browserAction = bA;
 
-	var EXTENSION_NAME = "Facebook Status";
+	var EXTENSION_NAME = "Facebook at Work Status";
 	var BROWSER_ACTION_PATH = "img/browserAction/";
 	var FILE_EXTENSION = ".png";
 	var Icons = {
@@ -12,14 +12,21 @@
 	};
 
 	var currentIcon = Icons.DEFAULT;
+	var siteError;
+	this.resetSiteError = () => siteError = false;
+	this.isSiteError = () => siteError;
 
 	browserAction.setBadgeBackgroundColor({ color: [250, 62, 62, 230] });
 
-	this.defaultError = (e) => {
+	this.unexpectedError = (e) => {
 		console.error(e);
 		error("Unexpected error, check Console for error message and stack trace");
 	};
-	this.loginError = () => error("Login to Facebook first");
+	this.loginError  = () => error("Login to Facebook at Work first");
+	this.siteError   = () => {
+		error("Provided site is inaccessible, update company in options");
+		siteError = true;
+	};
 	var error = message => {
 		changeIcon(Icons.ERROR, '!');
 		changeTitle(message);

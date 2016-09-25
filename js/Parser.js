@@ -21,7 +21,7 @@ function Parser(s, p) {
 			if (isLoginPage(response)) {
 				presenter.loginError();
 			} else {
-				presenter.defaultError(e);
+				presenter.unexpectedError(e);
 			}
 			e.desktop = true;
 			throw e;
@@ -29,5 +29,8 @@ function Parser(s, p) {
 		statuses.setCounts(counts);
 	};
 
-	var isLoginPage = response => response.querySelector("#login_form");
+	var isLoginPage = response => {
+		var form = response.querySelector("form");
+		return (form && form.action.includes("/work"));
+	}
 }
