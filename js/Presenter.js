@@ -14,7 +14,7 @@
 	var currentIcon = Icons.DEFAULT;
 	var siteError;
 	this.resetSiteError = () => siteError = false;
-	this.isSiteError = () => siteError;
+	this.isSiteError    = () => siteError;
 
 	browserAction.setBadgeBackgroundColor({ color: [250, 62, 62, 230] });
 
@@ -22,8 +22,8 @@
 		console.error(e);
 		error("Unexpected error, check Console for error message and stack trace");
 	};
-	this.loginError  = () => error("Login to Facebook at Work first");
-	this.siteError   = () => {
+	this.loginError = () => error("Login to Facebook at Work first");
+	this.siteError  = () => {
 		error("Provided site is inaccessible, update company in options");
 		siteError = true;
 	};
