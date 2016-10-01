@@ -1,14 +1,14 @@
-﻿// import Statuses.js, Parser.js, IconUpdater.js, Options.js, Fetcher.js, Presenter.js
+﻿// import Statuses.js, Presenter.js, Parser.js, IconUpdater.js, Options.js, Fetcher.js
 
-var fetcher, presenter, options;
+let fetcher, presenter, options;
 
 window.addEventListener("load", () => {
-	var UPDATE_TIME_MS = 1000 * 30;
+	const UPDATE_TIME_MS = 1000 * 30;
 
-	var statuses = new Statuses();
+	const statuses = new Statuses();
 	presenter = new Presenter(chrome.browserAction);
-	var parser = new Parser(statuses, presenter);
-	var iconUpdater = new IconUpdater(presenter, statuses);
+	const parser = new Parser(statuses, presenter);
+	const iconUpdater = new IconUpdater(presenter, statuses);
 	options = new Options(window.localStorage);
 	fetcher = new Fetcher(statuses, parser, presenter, iconUpdater, options);
 
@@ -21,7 +21,7 @@ chrome.browserAction.onClicked.addListener(() => {
 	if (options.getCompany() && !presenter.isSiteError()) {
 		chrome.tabs.query({ url: fetcher.getDesktopUrl() + '*' }, tabs => {
 			if (tabs.length === 0) {
-				var urlToOpen = fetcher.getDesktopUrl();
+				let urlToOpen = fetcher.getDesktopUrl();
 				if (presenter.isMessagesIconShown()) {
 					urlToOpen += "messages/";
 				} else if (presenter.isNotificationsIconShown()) {

@@ -1,13 +1,14 @@
 ﻿// import Statuses.js, Parser.js, Presenter.js, IconUpdater.js, Options.js
 
 function Fetcher(s, pa, pr, iU, o) {
-	var statuses = s, parser = pa, presenter = pr, iconUpdater = iU, options = o;
+	const statuses = s, parser = pa, presenter = pr, iconUpdater = iU, options = o;
 
-	var STATE_DONE = 4, STATUS_ERROR = 0, STATUS_OK = 200;
-	var company;
-	var mobileUrl, desktopUrl;
+	const STATE_DONE = 4, STATUS_ERROR = 0, STATUS_OK = 200;
 
-	var xhr = new XMLHttpRequest();
+	let company;
+	let mobileUrl, desktopUrl;
+
+	const xhr = new XMLHttpRequest();
 	xhr.timeout = 5000;
 	xhr.responseType = "document";
 

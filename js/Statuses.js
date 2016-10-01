@@ -1,5 +1,5 @@
 ﻿function Statuses() {
-	var counts = {
+	let counts = {
 		messages: 0, notifications: 0
 	};
 	this.setCounts = c => counts = c;
