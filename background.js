@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
 	const statuses = new Statuses();
 	presenter = new Presenter(chrome.browserAction);
 	const parser = new Parser(statuses, presenter);
-	const iconUpdater = new IconUpdater(presenter, statuses);
+	const iconUpdater = new IconUpdater(statuses, presenter);
 	options = new Options(window.localStorage);
 	fetcher = new Fetcher(statuses, parser, presenter, iconUpdater, options);
 

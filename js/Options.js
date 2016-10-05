@@ -1,20 +1,35 @@
-﻿function Options(s) {
-	const storage = s;
+﻿// import Storage
 
+const Options = (() => {
 	const COMPANY_PROPERTY = "company";
 	const SITE_PREFIX = "https://", SITE_POSTFIX = ".facebook.com/";
 
-	this.setCompany = company => {
-		storage.setItem(COMPANY_PROPERTY, company);
-		chrome.runtime.sendMessage({ event: "companyIsSet" });
-	};
-	this.getCompany = () => storage.getItem(COMPANY_PROPERTY);
+	let instance, storage;
 
-	this.getMobileSite  = company => getSite(company, true);
-	this.getDesktopSite = company => getSite(company);
+	class Options {
+		constructor(s) {
+			if (!instance) {
+				instance = this;
+				storage = s;
+			}
+			return instance;
+		}
+
+		setCompany(company) {
+			storage.setItem(COMPANY_PROPERTY, company);
+			chrome.runtime.sendMessage({ event: "companyIsSet" });
+		}
+		getCompany() { return storage.getItem(COMPANY_PROPERTY); }
+
+		getMobileSite(company)  { return getSite(company, true); }
+		getDesktopSite(company) { return getSite(company); }
+	}
+
 	const getSite = (company, mobile) => {
 		let site = SITE_PREFIX + company;
 		site += mobile ? ".m" : '';
 		return site + SITE_POSTFIX;
 	};
-}
+
+	return Options;
+})();

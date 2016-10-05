@@ -1,13 +1,25 @@
-﻿function Statuses() {
+﻿const Statuses = (() => {
+	let instance;
 	let counts = {
 		messages: 0, notifications: 0
 	};
-	this.setCounts = c => counts = c;
 
-	this.resetCounts = () => {
-		counts.messages = 0;
-		counts.notifications = 0;
-	};
-	this.getMessagesCount = () => Number(counts.messages);
-	this.getNotificationsCount = () => Number(counts.notifications);
-}
+	return class {
+		constructor() {
+			if (!instance) {
+				instance = this;
+			}
+			return instance;
+		}
+
+		setCounts(c) { counts = c; }
+
+		resetCounts() {
+			counts.messages = 0;
+			counts.notifications = 0;
+		}
+
+		getMessagesCount()      { return Number(counts.messages); }
+		getNotificationsCount() { return Number(counts.notifications); }
+	}
+})();
