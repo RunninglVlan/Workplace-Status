@@ -1,5 +1,5 @@
 ﻿const Presenter = (() => {
-	const EXTENSION_NAME = "Facebook at Work Status";
+	const EXTENSION_NAME = "Workplace Status";
 	const BROWSER_ACTION_PATH = "img/browserAction/";
 	const FILE_EXTENSION = ".png";
 	const Icons = {
@@ -30,7 +30,7 @@
 			console.error(e);
 			error("Unexpected error, check Console for error message and stack trace");
 		}
-		loginError() { error("Login to Facebook at Work first"); }
+		loginError() { error("Login to Workplace first"); }
 		siteError() {
 			error("Provided site is inaccessible, update company in options");
 			siteError = true;
