@@ -23,7 +23,7 @@ chrome.browserAction.onClicked.addListener(() => {
 			if (tabs.length === 0) {
 				let urlToOpen = fetcher.getDesktopUrl();
 				if (presenter.isMessagesIconShown()) {
-					urlToOpen += "messages/";
+					urlToOpen += "chat/";
 				} else if (presenter.isNotificationsIconShown()) {
 					urlToOpen += "notifications/";
 				}

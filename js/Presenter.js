@@ -32,7 +32,7 @@
 		}
 		loginError() { error("Login to Workplace first"); }
 		siteError() {
-			error("Provided site is inaccessible, update company in options");
+			error("Site can't be reached, update company in options or check your internet connection");
 			siteError = true;
 		}
 
