@@ -1,7 +1,7 @@
 # Workplace Status
 Toolbar extension for
 Opera (https://addons.opera.com/en/extensions/details/facebook-status-2) and
-Chrome (https://chrome.google.com/webstore/detail/facebook-status/pmgibfcomaiaigfapndkcjilfjegjmfl).
+Chrome (https://chrome.google.com/webstore/detail/workplace-status/niohhccbeokedijhglbamgfmeajldbdf).
 
 Shows your Workplace status (Messages and Notifications) on a toolbar.
 Perfect for those who don't want to keep Workplace open all the time.
